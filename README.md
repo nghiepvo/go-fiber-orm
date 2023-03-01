@@ -27,3 +27,7 @@ tmp/
 #Ignore DB file
 *.db
 ```
+
+## Refactor
+
+- Hexagonal Architecture.

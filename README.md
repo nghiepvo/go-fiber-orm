@@ -1,5 +1,7 @@
 # go-fiber-orm
 
+A first look on Fiber and ORM on Golang
+
 ```shell
 go mod init github.com/nghiepvo/go-fiber-orm
 go get -u gorm.io/gorm

@@ -1,4 +1,4 @@
-# go-fiber-orm
+# Golang + Fiber + GORM simple
 
 A first look on Fiber and ORM on Golang
 

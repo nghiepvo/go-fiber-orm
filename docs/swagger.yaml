@@ -1,0 +1,69 @@
+basePath: /api/v1
+definitions:
+  book.Book:
+    properties:
+      author:
+        type: string
+      createdAt:
+        type: string
+      deletedAt:
+        $ref: '#/definitions/gorm.DeletedAt'
+      id:
+        type: integer
+      rating:
+        type: integer
+      title:
+        type: string
+      updatedAt:
+        type: string
+    type: object
+  gorm.DeletedAt:
+    properties:
+      time:
+        type: string
+      valid:
+        description: Valid is true if Time is not NULL
+        type: boolean
+    type: object
+host: localhost:3000
+info:
+  contact:
+    email: nghiep.vo@gmail.com
+    name: Nghiep Vo
+  description: A first look on Fiber and ORM on Golang
+  license:
+    name: None
+    url: None
+  termsOfService: http://swagger.io/terms/
+  title: BOOK API
+  version: "1.0"
+paths:
+  /book:
+    get:
+      consumes:
+      - application/json
+      description: Get all book
+      parameters:
+      - description: Offset
+        in: query
+        name: offset
+        required: true
+        type: integer
+      - description: Offset
+        in: query
+        name: limit
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/book.Book'
+            type: array
+      summary: List Books
+      tags:
+      - Book
+swagger: "2.0"

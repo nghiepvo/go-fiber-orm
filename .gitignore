@@ -22,7 +22,6 @@ go.work
 
 # Ignore Auto reload project
 tmp/
-.air.toml
 
 #Ignore DB file
 *.db

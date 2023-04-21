@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/nghiepvo/go-fiber-orm/database"
+	"github.com/nghiepvo/go-fiber-orm/internal/database"
 	"gorm.io/gorm"
 )
 
@@ -17,6 +17,17 @@ type Book struct {
 	Rating int    `json:"rating"`
 }
 
+// GetBooks godoc
+//
+//	@Summary      	List Books
+//	@Tags			Book
+//	@Description	Get all book
+//	@Accept			json
+//	@Produce		json
+//	@Param			offset	query		int				true	"Offset"
+//	@Param			limit	query		int				true	"Offset"
+//	@Success		200		{array}     book.Book
+//	@Router			/api/v1/book [get]
 func GetBooks(c *fiber.Ctx) error {
 	db := database.DBConn
 	var books []Book
